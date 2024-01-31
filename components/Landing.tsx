@@ -47,17 +47,6 @@ const Landing = () => {
                 className="flex-col stroke-[2px] stroke-white overflow-hidden relative flex aspect-square w-3 justify-center items-center"
               >
                 <svg viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" aria-labelledby="arrowRightTopIconTitle" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#FFF" width="20px"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title id="arrowRightTopIconTitle">Arrow Right Top</title> <path d="M19 13V5h-8"></path> <path stroke-linecap="round" d="M19 5l-1 1"></path> <path d="M18 6L5 19"></path> </g></svg>
-
-                {/* <!-- <img
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c6c2f8110e6a0d3931b7757c9e4fac22b0287a9c3e6cfe211eeb9a4c6206cd8?apiKey=bc1qugrtknpjz52vc4m559q7zumkc4268kp7skrsee&"
-                  className="absolute h-full w-full object-cover object-center inset-0"
-                />
-                <img
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/f622eacba99ff54ce568f43c64210b4b77bf6fb9a37c6c6834995cc9ef2dad74?apiKey=bc1qugrtknpjz52vc4m559q7zumkc4268kp7skrsee&"
-                  className="aspect-square object-contain object-center w-full stroke-[2px] stroke-white overflow-hidden"
-                /> --> */}
               </div>
             </div>
           </div>
@@ -505,7 +494,7 @@ const Landing = () => {
             <div
               className="text-neutral-700 text-6xl font-medium max-md:max-w-full max-md:text-4xl"
             >
-              Let's
+              Let&apos;s
             </div>
             <div
               className="text-neutral-700 text-9xl font-medium mt-14 max-md:max-w-full max-md:text-4xl max-md:mt-10"

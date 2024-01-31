@@ -42,9 +42,9 @@ const Shop = () => {
             >
                 Solar equipment marketplace that connects installers with sellers
             </div>
-            <div className='w-1/2'>
-                <input type="text" className='w-full mt-4 h-16 rounded-full px-5' placeholder='Search for modules...' />
-                <button type="submit" className='relative float-end bg-green-600 bottom-[60px] right-2 p-4 rounded-full'>Search</button>
+            <div className="w-1/2">
+                <input type="text" className="w-full mt-4 h-16 rounded-full px-5" placeholder="Search for modules..." />
+                <button type="submit" className="relative float-end bg-green-600 bottom-[60px] right-2 p-4 rounded-full">Search</button>
             </div>
           </div>
         </div>
