@@ -1,8 +1,9 @@
-import Landing from "@/components/Landing";
+import Shop from '@/components/Shop';
+
 export default function Home() {
   return (
     <>
-    <Landing />
+    <Shop />
     </>
   );
 }
