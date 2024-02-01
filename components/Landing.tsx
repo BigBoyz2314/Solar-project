@@ -2,18 +2,188 @@ import React from 'react'
 import Navbar from './Navbar'
 import MiddleText from './MiddleText'
 import Footer from './Footer'
+import Image from 'next/image'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import { Button } from './ui/button'
+
 
 const Landing = () => {
   return (
     <>
     <div className="flex bg-white flex-col items-stretch">
         <Navbar/>
-        <div
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
+            <CarouselContent>
+              <CarouselItem>
+                <div
+                  className="flex-col overflow-hidden relative flex min-h-[603px] w-full justify-center px-16 items-start max-md:max-w-full max-md:px-5"
+                >
+
+                  <Image
+                    width={1920}
+                    height={1080}
+                    quality={100}
+                    alt='bg-1'
+                    loading="lazy"
+                    src="/bg-1.png"
+                    className="absolute h-full w-full object-cover object-center inset-0"
+                  />
+                  <div
+                    className="relative flex w-[600px] max-w-full flex-col ml-16 mt-20 mb-12 items-start max-md:my-10"
+                  >
+                    <div
+                      className="text-white text-6xl font-bold leading-[72px] self-stretch max-md:max-w-full max-md:text-4xl max-md:leading-[50px]"
+                    >
+                      Entscheiden Sie sich für eine Nachhaltige Zukunft
+                    </div>
+                    <div
+                      className="text-white text-xl leading-8 self-stretch mt-16 max-md:max-w-full max-md:mt-10"
+                    >
+                      Solarmodule, Wechselrichter, Batterien und Wallbox
+                    </div>
+                    <div
+                      className="flex items-stretch gap-3.5 ml-7 mt-20 max-md:ml-2.5 max-md:mt-10"
+                    >
+                      <a href="/shop">
+                      <Button
+                        variant="outline"
+                        size="lg"
+                        className='middle-btn'
+                      >
+                        Webshop
+                      <div
+                        className="flex-col stroke-[2px] ml-5 stroke-white overflow-hidden relative flex aspect-square w-3 justify-center items-center"
+                        >
+                        <svg viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" aria-labelledby="arrowRightTopIconTitle" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#FFF" width="20px"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title id="arrowRightTopIconTitle">Arrow Right Top</title> <path d="M19 13V5h-8"></path> <path stroke-linecap="round" d="M19 5l-1 1"></path> <path d="M18 6L5 19"></path> </g></svg>
+                      </div>
+                        </Button>
+                        </a>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+              <CarouselItem>
+                <div
+                  className="flex-col overflow-hidden relative flex min-h-[603px] w-full justify-center px-16 items-start max-md:max-w-full max-md:px-5"
+                >
+
+                  <Image
+                    width={1920}
+                    height={1080}
+                    quality={100}
+                    alt='bg-1'
+                    loading="lazy"
+                    src="/bg-1.png"
+                    className="absolute h-full w-full object-cover object-center inset-0"
+                  />
+                  <div
+                    className="relative flex w-[600px] max-w-full flex-col ml-16 mt-20 mb-12 items-start max-md:my-10"
+                  >
+                    <div
+                      className="text-white text-6xl font-bold leading-[72px] self-stretch max-md:max-w-full max-md:text-4xl max-md:leading-[50px]"
+                    >
+                      Unser Rundum-Service für Sie
+                    </div>
+                    <div
+                      className="text-white text-xl leading-8 self-stretch mt-16 max-md:max-w-full max-md:mt-10"
+                    >
+                      Unsere qualifizierten und regionalen Handwerker kommen zu Ihnen, um Ihre Solaranlage zu installieren
+                    </div>
+                    <div
+                      className="flex items-stretch gap-3.5 ml-7 mt-20 max-md:ml-2.5 max-md:mt-10"
+                    >
+                      <a href="/services">
+                      <Button
+                        variant="outline"
+                        size="lg"
+                        className='middle-btn'
+                      >
+                        Services 
+                      <div
+                        className="flex-col stroke-[2px] ml-5 stroke-white overflow-hidden relative flex aspect-square w-3 justify-center items-center"
+                        >
+                        <svg viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" aria-labelledby="arrowRightTopIconTitle" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#FFF" width="20px"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title id="arrowRightTopIconTitle">Arrow Right Top</title> <path d="M19 13V5h-8"></path> <path stroke-linecap="round" d="M19 5l-1 1"></path> <path d="M18 6L5 19"></path> </g></svg>
+                      </div>
+                        </Button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+              <CarouselItem>
+              <div
           className="flex-col overflow-hidden relative flex min-h-[603px] w-full justify-center px-16 items-start max-md:max-w-full max-md:px-5"
         >
-          <img
+
+          <Image
+            width={1920}
+            height={1080}
+            quality={100}
+            alt='bg-1'
             loading="lazy"
-            src="bg-1.png"
+            src="/bg-1.png"
+            className="absolute h-full w-full object-cover object-center inset-0"
+          />
+          <div
+            className="relative flex w-[600px] max-w-full flex-col ml-16 mt-20 mb-12 items-start max-md:my-10"
+          >
+            <div
+              className="text-white text-6xl font-bold leading-[72px] self-stretch max-md:max-w-full max-md:text-4xl max-md:leading-[50px]"
+            >
+              Förderungsmöglichkeiten
+            </div>
+            <div
+              className="text-white text-xl leading-8 self-stretch mt-16 max-md:max-w-full max-md:mt-10"
+            >
+              Regionale Förderung in Ihrer Stadt - BEG oder KFWFörderung
+            </div>
+            <div
+              className="flex items-stretch gap-3.5 ml-7 mt-20 max-md:ml-2.5 max-md:mt-10"
+            >
+              <a href="/services">
+              <Button
+                variant="outline"
+                size="lg"
+                className='middle-btn'
+              >
+                Übersicht Förderungsprogramme 
+              <div
+                className="flex-col stroke-[2px] ml-5 stroke-white overflow-hidden relative flex aspect-square w-3 justify-center items-center"
+                >
+                <svg viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" aria-labelledby="arrowRightTopIconTitle" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#FFF" width="20px"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title id="arrowRightTopIconTitle">Arrow Right Top</title> <path d="M19 13V5h-8"></path> <path stroke-linecap="round" d="M19 5l-1 1"></path> <path d="M18 6L5 19"></path> </g></svg>
+              </div>
+                </Button>
+              </a>
+            </div>
+          </div>
+        </div>
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        {/* <div
+          className="flex-col overflow-hidden relative flex min-h-[603px] w-full justify-center px-16 items-start max-md:max-w-full max-md:px-5"
+        >
+
+          <Image
+            width={1920}
+            height={1080}
+            quality={100}
+            alt='bg-1'
+            loading="lazy"
+            src="/bg-1.png"
             className="absolute h-full w-full object-cover object-center inset-0"
           />
           <div
@@ -50,7 +220,7 @@ const Landing = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div
           className="flex w-full flex-col items-stretch mt-11 px-11 max-md:max-w-full max-md:mt-10 max-md:px-5"
         >
@@ -96,9 +266,13 @@ const Landing = () => {
               <div
                 className="flex flex-col items-stretch w-[51%] max-md:w-full max-md:ml-0"
               >
-                <img
+                <Image
+                  width={1920}
+                  height={1080}
+                  quality={100}
+                  alt='bg-2'
                   loading="lazy"
-                  src="bg-2.png"
+                  src="/bg-2.png"
                   className="aspect-[0.94] object-contain object-center w-full overflow-hidden grow max-md:max-w-full max-md:mt-10"
                 />
               </div>
@@ -142,9 +316,13 @@ const Landing = () => {
               <div
                 className="flex flex-col items-stretch w-[38%] max-md:w-full max-md:ml-0"
               >
-                <img
+                <Image
+                  width={1920}
+                  height={1080}
+                  quality={100}
+                  alt='img1.jpg'
+                  src="/img1.jpg"
                   loading="lazy"
-                  src="img-1.png"
                   className="object-contain object-center w-full overflow-hidden max-md:max-w-full max-md:mt-6"
                 />
               </div>
@@ -228,9 +406,13 @@ const Landing = () => {
               <div
                 className="flex flex-col items-stretch w-[38%] ml-5 max-md:w-full max-md:ml-0"
               >
-                <img
+                <Image
+                  width={1920}
+                  height={1080}
+                  quality={100}
+                  alt='img2.jpg'
+                  src="/img2.jpg"
                   loading="lazy"
-                  src="img-1.png"
                   className="aspect-[1.52] object-contain object-center w-full overflow-hidden max-md:max-w-full max-md:mt-6"
                 />
               </div>
