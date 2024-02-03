@@ -297,7 +297,7 @@ const Services = () => {
                 </div>
                 <div className='col-span-2 mt-5'>
                   <label htmlFor="address" className="block text-md font-medium text-gray-700">Notizen, vorschläge oder fragen</label>
-                <textarea name="notes" id="notes" placeholder='Notes' autoComplete="notes" rows="6" className="mt-1 p-3 py-4 focus:ring-gray-500 focus:border-gray-500 bg-gray-100 block w-full shadow-sm sm:text-sm border-gray-300 border"></textarea>
+                <textarea name="notes" id="notes" placeholder='Notes' autoComplete="notes" rows={6} className="mt-1 p-3 py-4 focus:ring-gray-500 focus:border-gray-500 bg-gray-100 block w-full shadow-sm sm:text-sm border-gray-300 border"></textarea>
                 </div>
                 <div className='col-span-2 mt-5 flex justify-end'>
                   <Button
