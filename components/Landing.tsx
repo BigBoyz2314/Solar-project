@@ -11,6 +11,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { Button } from './ui/button'
+import Logos from './Logos'
 
 
 const Landing = () => {
@@ -173,54 +174,6 @@ const Landing = () => {
             <CarouselPrevious />
             <CarouselNext />
           </Carousel>
-        {/* <div
-          className="flex-col overflow-hidden relative flex min-h-[603px] w-full justify-center px-16 items-start max-md:max-w-full max-md:px-5"
-        >
-
-          <Image
-            width={1920}
-            height={1080}
-            quality={100}
-            alt='bg-1'
-            loading="lazy"
-            src="/bg-1.png"
-            className="absolute h-full w-full object-cover object-center inset-0"
-          />
-          <div
-            className="relative flex w-[600px] max-w-full flex-col ml-16 mt-20 mb-12 items-start max-md:my-10"
-          >
-            <div
-              className="text-white text-6xl font-bold leading-[72px] self-stretch max-md:max-w-full max-md:text-4xl max-md:leading-[50px]"
-            >
-              Discover the
-              <br />
-              best Furnitures
-            </div>
-            <div
-              className="text-white text-xl leading-8 self-stretch mt-16 max-md:max-w-full max-md:mt-10"
-            >
-              It provides a place to sit, sleep, eat, work, and store belongings.
-              <br />
-              Without furniture, a room would be much less
-              <br />
-              functional and comfortable
-            </div>
-            <div
-              className="flex items-stretch gap-3.5 ml-7 mt-20 max-md:ml-2.5 max-md:mt-10"
-            >
-              <div
-                className="text-white text-xl font-bold leading-8 grow whitespace-nowrap"
-              >
-                Explore now
-              </div>
-              <div
-                className="flex-col stroke-[2px] stroke-white overflow-hidden relative flex aspect-square w-3 justify-center items-center"
-              >
-                <svg viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" aria-labelledby="arrowRightTopIconTitle" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#FFF" width="20px"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title id="arrowRightTopIconTitle">Arrow Right Top</title> <path d="M19 13V5h-8"></path> <path stroke-linecap="round" d="M19 5l-1 1"></path> <path d="M18 6L5 19"></path> </g></svg>
-              </div>
-            </div>
-          </div>
-        </div> */}
         <div
           className="flex w-full flex-col items-stretch mt-11 px-11 max-md:max-w-full max-md:mt-10 max-md:px-5"
         >
@@ -229,35 +182,7 @@ const Landing = () => {
           >
             TRUSTED BY OVER 1K+ COMPANIES
           </div>
-          <div
-            className="self-center flex w-full max-w-[987px] items-start justify-between gap-5 mt-3 max-md:max-w-full max-md:flex-wrap"
-          >
-            <img
-              loading="lazy"
-              src="microsoft.png"
-              className="aspect-square object-contain object-center w-[200px] overflow-hidden self-stretch shrink-0 max-w-full"
-            />
-            <img
-              loading="lazy"
-              src="decor.png"
-              className="aspect-[2.5] object-contain object-center w-[155px] overflow-hidden self-center shrink-0 max-w-full my-auto"
-            />
-            <img
-              loading="lazy"
-              src="urbaninterior.png"
-              className="aspect-[2.24] object-contain object-center w-[132px] overflow-hidden self-center shrink-0 max-w-full my-auto"
-            />
-            <img
-              loading="lazy"
-              src="hookerfurnishings.png"
-              className="aspect-[3.95] object-contain object-center w-[146px] overflow-hidden self-center shrink-0 max-w-full my-auto"
-            />
-            <img
-              loading="lazy"
-              src="bassett.png"
-              className="aspect-[3.75] object-contain object-center w-[150px] overflow-hidden self-center shrink-0 max-w-full my-auto"
-            />
-          </div>
+          <Logos />
           <MiddleText/>
           <div
             className="self-center w-full max-w-[1238px] mt-24 max-md:max-w-full max-md:mt-10"

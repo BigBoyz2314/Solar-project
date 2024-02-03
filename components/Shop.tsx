@@ -5,6 +5,7 @@ import Navbar from './Navbar'
 import Link from 'next/link'
 import TopSort from './TopSort'
 import Filters from './Filters'
+import Logos from './Logos'
 import {
     Select,
     SelectContent,
@@ -56,35 +57,7 @@ const Shop = () => {
           >
             TRUSTED BY OVER 1K+ COMPANIES
           </div>
-          <div
-            className="self-center flex w-full max-w-[987px] items-start justify-between gap-5 mt-3 max-md:max-w-full max-md:flex-wrap"
-          >
-            <img
-              loading="lazy"
-              src="microsoft.png"
-              className="aspect-square object-contain object-center w-[200px] overflow-hidden self-stretch shrink-0 max-w-full"
-            />
-            <img
-              loading="lazy"
-              src="decor.png"
-              className="aspect-[2.5] object-contain object-center w-[155px] overflow-hidden self-center shrink-0 max-w-full my-auto"
-            />
-            <img
-              loading="lazy"
-              src="urbaninterior.png"
-              className="aspect-[2.24] object-contain object-center w-[132px] overflow-hidden self-center shrink-0 max-w-full my-auto"
-            />
-            <img
-              loading="lazy"
-              src="hookerfurnishings.png"
-              className="aspect-[3.95] object-contain object-center w-[146px] overflow-hidden self-center shrink-0 max-w-full my-auto"
-            />
-            <img
-              loading="lazy"
-              src="bassett.png"
-              className="aspect-[3.75] object-contain object-center w-[150px] overflow-hidden self-center shrink-0 max-w-full my-auto"
-            />
-          </div>
+          <Logos />
           <MiddleText/>
           
           <div
@@ -147,7 +120,7 @@ const Shop = () => {
                               <div
                                 className="bg-stone-50 flex flex-col justify-center items-center aspect-square w-full px-2 rounded-xl max-md:mt-8"
                               >
-                              <Link href={"/product"}>
+                              <Link href={"/shop/product/1"}>
                                 <img
                                   loading="lazy"
                                   src="solar-1.jpg"

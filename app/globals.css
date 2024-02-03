@@ -82,3 +82,7 @@
 .middle-btn {
   background-color: #FCDC09;
 }
+
+.overflow-unset {
+  overflow: unset;
+}
