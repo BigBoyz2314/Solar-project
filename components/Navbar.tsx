@@ -24,9 +24,12 @@ const Navbar = () => {
           className="flex w-full max-w-full justify-between gap-5 mt-0 py-3 bg-white max-md:max-w-full max-md:flex-wrap"
         >
           <Link href="/">
-            <img
+            <Image
+              width={1080}
+              height={1080}
+              alt='Logo'
               loading="lazy"
-              src="solar-logo.png"
+              src="/solar-logo.png"
               className="aspect-[3.57] object-contain object-center w-[182px] overflow-hidden shrink-0 max-w-full"
             />
           </Link>
@@ -34,22 +37,22 @@ const Navbar = () => {
             className="self-center flex items-start justify-between gap-5 my-auto px-5 max-md:max-w-full max-md:flex-wrap"
           >
             <Link href="/shop" passHref
-              className="text-neutral-700 hover:font-semibold hover:border-b-2 hover:border-yellow-400 text-base leading-6 tracking-tight self-center whitespace-nowrap my-auto"
+              className="text-neutral-700 hover:font-semibold hover:border-b-2 hover:border-yellow-400 hover:border-collapse text-base leading-6 tracking-tight self-center whitespace-nowrap my-auto"
             >
               Webshop 
             </Link>
             <Link href="/services" passHref
-              className="text-neutral-700 text-base leading-6 hover:font-semibold hover:border-b-2 hover:border-yellow-400 tracking-tight self-center my-auto"
+              className="text-neutral-700 text-base leading-6 hover:font-semibold hover:border-b-2 hover:border-yellow-400 hover:border-collapse tracking-tight self-center my-auto"
             >
               Services
             </Link>
             <Link href="/about" passHref
-              className="text-neutral-700 text-base hover:font-semibold hover:border-b-2 hover:border-yellow-400 leading-6 tracking-tight self-center my-auto"
+              className="text-neutral-700 text-base hover:font-semibold hover:border-b-2 hover:border-yellow-400 hover:border-collapse leading-6 tracking-tight self-center my-auto"
             >
               Über uns
             </Link>
             <Link href="/blog" passHref
-              className="text-neutral-700 text-base hover:font-semibold hover:border-b-2 hover:border-yellow-400 leading-6 tracking-tight self-center my-auto"
+              className="text-neutral-700 text-base hover:font-semibold hover:border-b-2 hover:border-yellow-400 hover:border-collapse leading-6 tracking-tight self-center my-auto"
             >
               Ratgeber
             </Link>
