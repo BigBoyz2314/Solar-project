@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import Image from 'next/image'
@@ -6,24 +7,47 @@ import Link from 'next/link'
 import { Button } from './ui/button'
 import Plus from './ui/plusicon'
 import Minus from './ui/minusicon'
+import ScrollHandler from './ScrollHandler';
 
 const Services = () => {
+
+  const [activeLinkId, setActiveLinkId] = useState<number | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+
+      for (let i = 1; i <= 7; i++) {
+        const section = document.getElementById(`section${i}`);
+        const nextSection = i < 7 ? document.getElementById(`section${i + 1}`) : null;
+
+        if (section && nextSection) {
+          const sectionTop = section.offsetTop;
+          const nextSectionTop = nextSection.offsetTop;
+
+          if (scrollY >= sectionTop && scrollY < nextSectionTop) {
+            setActiveLinkId(i);
+            break; // Exit the loop once we find the active link
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+  });
+
 
   return (
     <>
     <div className="flex bg-white flex-col items-stretch">
         <Navbar/>
         <div
-          className="flex-col overflow-hidden relative flex min-h-[603px] w-full justify-center px-16 items-start max-md:max-w-full max-md:px-5"
+          className="flex-col overflow-hidden relative flex min-h-[603px] w-full justify-center items-start max-md:max-w-full max-md:px-5"
         >
-          <Image
-            width={1920}
-            height={1080}
-            alt='bg-3'
-            loading="lazy"
-            src="/bg-3.png"
-            className="absolute h-full w-full object-cover object-center inset-0"
-          />
+          <video id="product-video" autoPlay={true} className='w-full h-full'>
+            <source src="https://enpaldynamicsliderstrg.blob.core.windows.net/slider-images/Marketing-Materials/Enpal-Product-Page-6s-v13.mp4" type="video/mp4" data-wf-ignore="true"/>
+          </video>
+          
         </div>
         <div
           className="flex w-full flex-col items-stretch mt-11 px-11 max-md:max-w-full max-md:mt-10 max-md:px-5"
@@ -209,16 +233,17 @@ const Services = () => {
             </div>  
           </div>
           <div className="grid grid-cols-4 w-11/12 self-center max-md:grid-cols-2 my-10 h-full">
+          <ScrollHandler />
             <div className="w-4/6">
               <div className="sticky overflow-unset top-32">
-              <h6 className='text-lg font-bold text-blue-900'>INHALTSVERZEICHNIS</h6>
-              <Link className='mt-3 hover:border-l-2 hover:border-l-yellow-500 hover:border-collapse hover:border-spacing-1 block text-md text-wrap text-gray-500' href="#1">Photovoltaik Montage: Das wird benötigt</Link>
-              <Link className='mt-3 hover:border-l-2 hover:border-l-yellow-500 hover:border-collapse hover:border-spacing-1 block text-md text-wrap text-gray-500' href="#2">Photovoltaik Montagearten</Link>
-              <Link className='mt-3 hover:border-l-2 hover:border-l-yellow-500 hover:border-collapse hover:border-spacing-1 block text-md text-wrap text-gray-500' href="#3">Photovoltaik Montagesysteme</Link>
-              <Link className='mt-3 hover:border-l-2 hover:border-l-yellow-500 hover:border-collapse hover:border-spacing-1 block text-md text-wrap text-gray-500' href="#4">In acht Schritten zu Solarenergie</Link>
-              <Link className='mt-3 hover:border-l-2 hover:border-l-yellow-500 hover:border-collapse hover:border-spacing-1 block text-md text-wrap text-gray-500' href="#5">Sicherheit</Link>
-              <Link className='mt-3 hover:border-l-2 hover:border-l-yellow-500 hover:border-collapse hover:border-spacing-1 block text-md text-wrap text-gray-500' href="#6">Häufig gestellte Fragen</Link>
-              <Link className='mt-3 hover:border-l-2 hover:border-l-yellow-500 hover:border-collapse hover:border-spacing-1 block text-md text-wrap text-gray-500' href="#7">Fazit</Link>
+                <h6 className='text-lg font-bold text-blue-900'>INHALTSVERZEICHNIS</h6>
+                <Link className={activeLinkId === 1 ? 'active mt-3 border-l-2 border-l-yellow-500 pl-2 font-semibold text-slate-900 block text-md text-wrap transition-all' : 'mt-3 hover:border-l-2 hover:border-l-yellow-500 hover:pl-2 hover:font-semibold hover:text-slate-900 block text-md text-wrap text-gray-500'} href="#section1">Photovoltaik Montage: Das wird benötigt</Link>
+                <Link className={activeLinkId === 2 ? 'active mt-3 border-l-2 border-l-yellow-500 pl-2 font-semibold text-slate-900 block text-md text-wrap transition-all' : 'mt-3 hover:border-l-2 hover:border-l-yellow-500 hover:pl-2 hover:font-semibold hover:text-slate-900 block text-md text-wrap text-gray-500'} href="#section2">Photovoltaik Montagearten</Link>
+                <Link className={activeLinkId === 3 ? 'active mt-3 border-l-2 border-l-yellow-500 pl-2 font-semibold text-slate-900 block text-md text-wrap transition-all' : 'mt-3 hover:border-l-2 hover:border-l-yellow-500 hover:pl-2 hover:font-semibold hover:text-slate-900 block text-md text-wrap text-gray-500'} href="#section3">Photovoltaik Montagesysteme</Link>
+                <Link className={activeLinkId === 4 ? 'active mt-3 border-l-2 border-l-yellow-500 pl-2 font-semibold text-slate-900 block text-md text-wrap transition-all' : 'mt-3 hover:border-l-2 hover:border-l-yellow-500 hover:pl-2 hover:font-semibold hover:text-slate-900 block text-md text-wrap text-gray-500'} href="#section4">In acht Schritten zu Solarenergie</Link>
+                <Link className={activeLinkId === 5 ? 'active mt-3 border-l-2 border-l-yellow-500 pl-2 font-semibold text-slate-900 block text-md text-wrap transition-all' : 'mt-3 hover:border-l-2 hover:border-l-yellow-500 hover:pl-2 hover:font-semibold hover:text-slate-900 block text-md text-wrap text-gray-500'} href="#section5">Sicherheit</Link>
+                <Link className={activeLinkId === 6 ? 'active mt-3 border-l-2 border-l-yellow-500 pl-2 font-semibold text-slate-900 block text-md text-wrap transition-all' : 'mt-3 hover:border-l-2 hover:border-l-yellow-500 hover:pl-2 hover:font-semibold hover:text-slate-900 block text-md text-wrap text-gray-500'} href="#section6">Häufig gestellte Fragen</Link>
+                <Link className={activeLinkId === 7 ? 'active mt-3 border-l-2 border-l-yellow-500 pl-2 font-semibold text-slate-900 block text-md text-wrap transition-all' : 'mt-3 hover:border-l-2 hover:border-l-yellow-500 hover:pl-2 hover:font-semibold hover:text-slate-900 block text-md text-wrap text-gray-500'} href="#section7">Fazit</Link>
               </div>
             </div>
             <div className="ml-5 col-span-3">
@@ -258,7 +283,7 @@ const Services = () => {
                 <Link className='mt-3 block text-md text-wrap text-gray-700 font-bold underline underline-offset-2' href="#6">Häufig gestellte Fragen</Link>
                 <Link className='mt-3 block text-md text-wrap text-gray-700 font-bold underline underline-offset-2' href="#7">Fazit</Link>
               </div>
-              <div className="mt-8">
+              <div className="mt-8" id='section1'>
                 <h1 className='text-3xl border-l-4 font-bold border-l-yellow-500 pl-3'>Photovoltaik Montage: Das wird benötigt</h1>
                 <p className='text-lg mt-4'>Für jede Photovoltaik Montage werden bestimmte Materialien benötigt, ohne die eine PV-Anlage nicht montiert werden und keinen <Link href="#" className='text-blue-500'>Solarstrom</Link> produzieren könnte.</p>
               </div>
@@ -291,7 +316,7 @@ const Services = () => {
               <div className="mt-8">
                 <p className='text-lg'>Im Kapitel <Link href="#" className='text-blue-500'>Photovoltaik Montagesysteme</Link> gehen wir noch detaillierter auf die Materialien und ihre Eigenschaften ein. Im Folgenden geht es jedoch erst einmal um die unterschiedlichen Montagearten.</p>
               </div>
-              <div className="mt-8">
+              <div className="mt-8" id='section2'>
                 <h1 className='text-3xl border-l-4 font-bold border-l-yellow-500 pl-3'>Photovoltaik Montagearten</h1>
                 <p className='text-lg mt-4'>Bei der Montage einer Photovoltaikanlage kann zwischen verschiedenen Montagearten gewählt werden. Je nach Dachart und persönlichen Präferenzen stehen folgende Montagearten zur Auswahl:</p>
                 <ul className='list-disc list-inside font-semibold *:mt-3'>
@@ -658,8 +683,8 @@ const Services = () => {
                   className='w-4/6 rounded-xl'
                 />
               </div>
-              <div className="mt-8">
-                <h1 className="text-3xl font-bold">Photovoltaik Montagesysteme </h1>
+              <div className="mt-8" id='section3'>
+                <h1 className="text-3xl border-l-4 font-bold border-l-yellow-500 pl-3">Photovoltaik Montagesysteme </h1>
                 <p className="text-lg mt-2">Um eine Anlage aufs Dach zu bekommen, braucht es die richtigen Montagesysteme. Die wichtigsten Bestandteile sind die Solarmodule selbst. Die Unterkonstruktion besteht aus Dachhaken, Montageschienen und Modulklemmen. Jedes Bestandteil hat seine feste Aufgabe und Funktion:</p>
                 <h2 className="text-xl font-bold mt-6">Solarmodule</h2>
                 <ul className='list-disc list-inside font-semibold *:mt-3'>
@@ -667,10 +692,175 @@ const Services = () => {
                   <li><Link href="#" className='text-blue-500'>monokristalline Solarzellen</Link></li>
                   <li><Link href="#" className='text-blue-500'>Dünnschichtmodule</Link></li>
                 </ul>
-                <p className="text-lg mt-2">Während monokristalline Module den höchsten Wirkungsgrad aufweisen, sind polykristalline Module günstiger. Dünnschichtmodule sind hingegen vergleichsweise leicht, haben dafür aber den geringsten Wirkungsgrad. Mehr zu den Vor- und Nachteilen finden Sie im folgenden Artikel: Monokristallin vs. Polykristallin</p>
+                <p className="text-lg mt-2">Während monokristalline Module den höchsten Wirkungsgrad aufweisen, sind polykristalline Module günstiger. Dünnschichtmodule sind hingegen vergleichsweise leicht, haben dafür aber den geringsten Wirkungsgrad. Mehr zu den Vor- und Nachteilen finden Sie im folgenden Artikel: <Link href="#" className="text-blue-500">Monokristallin vs. Polykristallin</Link></p>
               </div>
-            
+              <div className="mt-8 flex justify-center">
+                <Image
+                  height={1080}
+                  width={1080}
+                  alt='services10'
+                  src="/services10.jpg"
+                  className='w-4/6 rounded-xl'
+                />
+              </div>
+              <div className="mt-8">
+                <p className="text-lg">Ein Modul besteht aus einer Vielzahl von Solarzellen, die durch den photoelektrischen Effekt Licht in elektrische Energie umwandeln. Die Solarzellen sind von einer Kunststoffschicht umhüllt und durch ein Frontglas und einen Rahmen vor Witterungseinflüssen geschützt. </p>
+                <p className="text-lg mt-2">Als Faustregel gilt: 1m2 PV-Module erzeugen ca. 100-200kWh Solarstrom. Wie viele Module insgesamt auf Ihr Dach passen, können Sie sich bei den meisten Photovoltaikanbietern kostenlos berechnen lassen. Mit Ertrags- und Verbrauchsrechner können Sie auch schon vorab überschlägig berechnen, ob sich eine Solaranlage für Sie lohnt.</p>
+                <p className="text-lg mt-2">Hier kommen Sie zum Enpal <Link href="#" className="text-blue-500">Solarcheck</Link> oder zum <Link href="#" className="text-blue-500">Ertragsrechner</Link></p>
+                <h2 className="text-xl font-bold mt-6">Dachhaken</h2>
+                <p className="text-lg mt-6">Dachhaken sind das Bindeglied zwischen einer Photovoltaikanlage und dem Dach. Sie verbinden die Unterkonstruktion, also die Metallschienen, mit den Dachsparren. Somit sind die Schienen auch bei Sturm sicher befestigt. Die Anzahl der benötigten Dachhaken ist abhängig von mehreren Faktoren: </p>
+                <ul className='list-disc list-inside font-semibold text-lg *:mt-3'>
+                  <li>Region und Witterungsverhältnissen: regionsabhängige Wind- und Schneelasten beeinflussen die Anzahl der Dachhaken  </li>
+                  <li>Anzahl an Modulen</li>
+                  <li>Modulgröße</li>
+                  <li>Dachbelastung, Dachneigung und Sparrenabstand</li>
+                </ul>
+                <p className="text-lg mt-6">Je nach Modell und Bedarf können Dachhaken unterschiedlich aussehen: Ankerplatten gibt es in verschiedenen Breiten, die Bügel in verschiedenen Formen und Ausführung - zum Beispiel verstellbare Dachhaken. Die grundlegenden Merkmale und Funktionen aller Dachhaken sieht wie folgt aus:</p>
+                <ul className='list-disc list-inside font-semibold text-lg *:mt-3'>
+                  <li>Ein Dachhaken besteht aus einem U-förmigen Bügel - meist aus Edelstahl.</li>
+                  <li>Der Bügel ist wiederum mit einer Ankerplatte, oder auch Lochplatte genannt, verschweißt.</li>
+                  <li>Diese wird am Sparren befestigt und anschließend verschraubt.</li>
+                  <li>Nach der Montage des Dachhakens am Sparren steht das U aus dem Ziegel heraus.</li>
+                  <li>Hier wird die Montageschiene eingelegt und festgeschraubt. </li>
+                </ul>
+              </div>
+              <div className="mt-8 flex justify-center">
+                <Image
+                  height={1080}
+                  width={1080}
+                  alt='services11'
+                  src="/services11.jpg"
+                  className='w-4/6 rounded-xl'
+                />
+              </div>
+              <div className="mt-8">
+                <h2 className="text-xl font-bold">Montageschiene</h2>
+                <p className="text-lg mt-6">Montageschienen, oder auch Solarschienen, sind die Tragegerüste für Photovoltaikanlagen. Die Hauptaufgabe der Montageschienen besteht darin, die Module in Position zu halten und die Wind- und Schneelasten gleichmäßig auf die Unterkonstruktion zu verteilen.</p>
+                <ul className='list-disc list-inside font-semibold text-lg *:mt-3'>
+                  <li>Montageschienen haben im Querschnitt meist eine H- oder X-Form.</li>
+                  <li>In den Zwischenräumen sitzen dann die Modulklemmen oder die Panels selbst.</li>
+                  <li>Die Schienen werden an den im Vorhinein angebrachten Dachhaken verschraubt.</li>
+                  <li>Das Ende einer Schiene wird aus ästhetischen und Sicherheitsgründen mit einer Endkappe verschlossen.</li>
+                  <li>Die Photovoltaikmodule werden dann auf die Schienen gelegt und mit Modulklemmen befestigt.</li>
+                </ul>
+                <p className="text-lg mt-3">So liegen die Schienen schließlich horizontal auf dem Dach, also im 90-Grad-Winkel zu den Dachsparren.</p>
+                <p className="text-lg mt-3">Eine etwas teurere, dafür jedoch flexiblere Montageart ist die Kreuzschienenmontage. Hier werden neben den horizontalen Montageschienen auch vertikale Schienen mit Modulklemmen an den horizontalen Schienen angebracht. Das daraus entstehende Rastermuster ist besonders geeignet für Dächer mit Unebenheiten. Module können nämlich so unabhängig von der Dachkonstruktion positioniert werden. Ein Nachteil dieser Montageart ist die weniger ästhetische Wirkung, da die Module weiter vom Dach abstehen. Außerdem kann der größere Abstand zwischen Dach und Modul die Luftzirkulation negativ beeinflussen.</p>
+              </div>
+              <div className="mt-8 flex justify-center">
+                <Image
+                  height={1080}
+                  width={1080}
+                  alt='services12'
+                  src="/services12.jpg"
+                  className='w-4/6 rounded-xl'
+                />
+              </div>
+              <div className="mt-8">
+                <h2 className="text-xl font-bold">Modulklemmen</h2>
+                <p className="text-lg mt-2">Modulklemmen sind das Verbindungsstück zwischen den Solarpanels und den Montageschienen.</p>
+                <ul className='list-disc list-inside font-semibold text-lg *:mt-3'>
+                  <li>Sie werden in den Fugen der Montageschiene verankert und festgeschraubt.</li>
+                  <li>Klemmen halten mit zwei Armen die Module rechts und links am Rahmen fest.</li>
+                  <p className="text-lg mt-2">Modulklemmen, die zwischen zwei Modulen angebracht werden, haben zwei dieser Arme und heißen <span className="font-bold">Mittelklemmen</span> - selten auch Doppelklemmen. Für das äußerste Modul auf dem Dach wird eine Klemme mit nur einem Arm benötigt - diese wird als <span className="font-bold">Endklemme</span> bezeichnet.</p>
+                </ul>
+              </div>
+              <div className="mt-8 flex justify-center">
+                <Image
+                  height={1080}
+                  width={1080}
+                  alt='services13'
+                  src="/services13.jpg"
+                  className='w-4/6 rounded-xl'
+                />
+              </div>
+              <div className="mt-8" id='section4'>
+                <h1 className="text-3xl border-l-4 font-bold border-l-yellow-500 pl-3">In acht Schritten zu Solarenergie </h1>
+                <p className="text-lg mt-2">Der gesamte Prozess von Planung bis Inbetriebnahme einer Solaranlage dauert in der Regel zwischen drei und sechs Monaten. Die Montage der Anlage selbst nimmt hingegen nur einen Bruchteil der Zeit ein. Bei der Installation durch einen Fachbetrieb dauert die Montage des Untergestells und der Module oft nur wenige Tage. Bevor die Anlage jedoch auf das Dach kommt, muss erst einmal gründlich geplant werden:</p>
+                <p className="text-lg font-semibold mt-2">1. Planung</p>
+                <p className="text-lg mt-2">Der erste Schritt zu einer eigenen Photovoltaik-Anlage auf dem Dach ist die Planung. Hierbei gilt es zu überprüfen, ob sich Ihr <Link href="#" className='text-blue-500'>Dach für eine PV-Anlage eignet</Link> und wie viel Strom Sie erzeugen könnten. Dies können Sie selbst prüfen oder sich einen Fachbetrieb hinzuziehen. Oftmals wird diese Leistung kostenlos angeboten. Bei der Planung wird entschieden, ob gegebenenfalls Abschattungen wie z.B.  Bäume entfernt werden müssten.  </p>
+                <div className="p-4 mt-3 bg-green-100 rounded-xl">
+                  <p className="text-md">Sie möchten herausfinden, ob sich eine PV-Anlage auch für Ihr Haus lohnt und hätten geren eine konkrete Kosteneinschätzung?</p>
+                  <Link href="#" className="mt-2 text-blue-500">&gt;&gt; Hier können Sie ein unverbindliches Expertengespräch vereinbaren</Link>
+                </div>
+                <p className="text-lg mt-2">Im gleichen Zug können Sie sich entscheiden, ob Sie Ihre Solaranlage mieten oder kaufen möchten. Bei der Miete ist die Montage automatisch Teil des Pakets, während im Kaufmodell die Installation der Anlage nicht zwingend vom Anbieter übernommen wird. In diesem Fall muss die Montage als Zusatzleistung bei einem Fachbetrieb angefragt werden. Photovoltaik selbst zu installieren ist möglich, doch selten empfohlen.</p>
+                <p className="text-lg font-semibold mt-2">2. Unterkonstruktion</p>
+                <p className="text-lg mt-2">Im nächsten Schritt muss die Unterkonstruktion am Dach befestigt werden. Dazu zählt die Montage von Dachhaken und Montageschienen. Je nach Montageart sehen die Abläufe und benötigten Materialen anders aus. </p>
+                <p className="text-lg font-semibold mt-2">3. DC- Verkabelung am Montagegestell</p>
+                <p className="text-lg mt-2">m nächsten Schritt erfolgt die DC-Verkabelung. DC-Strom ist der von den Solarmodulen erzeugte Gleichstrom. Dieser kann erst genutzt werden, nachdem er vom Wechselrichter in AC-Strom, also Wechselstrom, umgewandelt wird. Die DC-Verkabelung verbindet also Solarmodule und Wechselrichter, die AC-Verkabelung hingegen verbindet den Wechselrichter mit dem Hausstromnetz.</p>
+                <p className="text-lg font-semibold mt-2">4. Montage der Module und Verkabelung</p>
+                <p className="text-lg mt-2">Im nächsten Schritt werden die Solarmodule angebracht und miteinander verkabelt.</p>
+                <p className="text-lg mt-2">An einer Stelle wird die DC-Verkabelung durch das Dach geführt. In der Regel wird hier eine Dachpfanne ausgetauscht gegen eine Dachpfanne mit Aussparung für das Kabel. Oftmals reicht jedoch auch eine ähnliche Aussparung am Ziegel wie sie bei Dachhaken gemacht wird. </p>
+                <p className="text-lg mt-2">In der Folgen Grafík ist zu erkennen, dass Module entweder in Reihe oder parallel geschaltet werden können. Die Mehrheit von Photovoltaikanlagen werden als <Link href="#" className='text-blue-500'>Modulstring</Link> installiert, also in Reihe geschaltet.</p>
 
+              </div>
+              <div className="mt-8 flex justify-center">
+                <Image
+                  height={1080}
+                  width={1080}
+                  alt='services14'
+                  src="/services14.png"
+                  className='w-4/6 rounded-xl'
+                />
+              </div>
+              <div className="mt-8">
+                <p className="text-lg font-semibold mt-2">5. Installation Wechselrichter und Überspannungsschutz</p>
+                <p className="text-lg mt-2">Nachdem die Module montiert und verkabelt wurden, folgt der <Link href="#" className='text-blue-500'>Wechselrichter</Link> und Überspannungsschutz. Der Wechselrichter wandelt den Gleichstrom in nutzbaren Wechselstrom um. Daher muss er einerseits mit der PV-Anlage und dem Hausstromnetz verbunden sein.</p>
+                <p className="text-lg font-semibold mt-2">6. AC-Verkabelung vom Wechselrichter zum Stromzähler</p>
+                <p className="text-lg mt-2">Sobald der Wechselrichter installiert ist und auch die AC-Verkabelung zum <Link href="#" className='text-blue-500'>Stromzähler</Link> steht, ist die Solaranlage bereit für den Betrieb und erzeugt Strom. Bei der Wahl des Stromzählers ist es wichtig, dass der Stromzähler die Menge des Stroms messen kann, die eingespeist wird. Häufig wird daher ein Zweirichtungszähler verbaut, der Bezug und Einspeisung zählt. Ein Alleskönner unter den Stromzählern sind die modernen Smart Meter. Sie lassen sich individuell programmieren und können Verbrauchsdaten in Echtzeit ausspielen.</p>
+                <p className="text-lg font-semibold mt-2">7. Stromspeicher und Wallbox (optional)</p>
+                <p className="text-lg mt-2">Nachdem die Anlage vollständig verkabelt wurde und Strom erzeugt, kann ein Stromspeichers installiert und mit dem Stromnetz verbunden werden. Auch diesen Schritt können Sie selbst übernehmen oder vom Fachbetrieb Ihrer Wahl ausführen lassen. Bei der Montage des Stromspeichers ist jedoch, wie auch bei der Montage des Wechselrichters, auf eine sichere Vorgehensweise zu achten. Hier besteht Stromschlaggefahr!</p>
+                <p className="text-lg mt-2">Auch um die <Link href="#" className='text-blue-500'>Wallbox</Link> können Sie sich nun kümmern. Die Installation der Wallbox kann allerdings auch vorgezogen werden - sogar noch vor der Montage der Module. </p>
+                <p className="text-lg font-semibold mt-2">8. Überprüfung, Probedurchlauf & Messung</p>
+                <p className="text-lg mt-2">Der letzte Schritt ist die Überprüfung der ordnungsgemäßen Funktion der Anlage. Dazu gehört ein erster Probedurchlauf, um zu messen, ob die Anlage Strom erzeugt, wie vorgesehen. Außerdem muss geprüft werden, ob das passende Betriebssystem, wie beispielsweise eine App, korrekt funktioniert. Werden Fehler gefunden, können diese direkt beglichen werden. </p>
+              </div>
+              <div className="mt-8" id='section5'>
+                <h1 className="text-3xl border-l-4 font-bold border-l-yellow-500 pl-3">Sicherheit</h1>
+                <p className="text-lg mt-2">Die fachgerechte Installation der Photovoltaikanlage ist aus mehreren Gründen besonders wichtig. Auch wenn Termine bei Fachbetrieben weiterhin sehr gefragt und daher schwer zu ergattern sind, sind Risiken damit verbunden, diese Arbeit selbst zu übernehmen. Es besteht erhöhte Unfallgefahr, da eine Installation in großer Höhe ohne die richtige Ausrüstung und das nötige Fachwissen sehr gefährlich ist. Außerdem wird viel mit Strom und Kabeln gearbeitet, was die Gefahr eines Stromschlags birgt. Deshalb dürfen bestimmte Arbeiten, wie z.B. die Endverdrahtung, nur von einem Elektriker durchgeführt werden.</p>
+                <p className="text-lg mt-2">Neben dem persönlichen Unfallrisiko können Sie auch Ihr Montagesystem selbst beschädigen und müssen die PV-Komponenten teuer nachkaufen. Auslöser kann eine unsichere Befestigung sein, die dazu führt, dass sich die Solarmodule bei hoher <Link href="#" className="text-blue-500">Flächenlast</Link> oder <Link href="#" className="text-blue-500">Schneelast</Link> leichter aus dem Gestell lösen.</p>
+              </div>
+              <div className="mt-8" id='section6'>
+                <h1 className="text-3xl border-l-4 font-bold border-l-yellow-500 pl-3">Häufig gestellte Fragen</h1>
+                <p className="text-xl font-bold mt-2">Lohnt sich eine Photovoltaikanlage, die nicht nach Süden ausgerichtet ist?</p>
+                <p className="text-lg mt-2">Tatsächlich ist es so, dass PV-Module auch bei anderen Dachneigungen und Dachausrichtungen noch einen Großteil ihrer Leistung bringen. Auch wenn eine Südausrichtung in den meisten Fällen die optimale Lösung darstellt, ist ein Dach mit derartiger Ausrichtung nicht notwendig. PV-Anlagen, die nach Osten und Westen ausgerichtet sind, bringen ähnlich hohe Erträge und erzeugen meistens dann Strom, wenn Sie gerade zu Hause sind, also morgens und abends.</p>
+                <p className="text-lg mt-2">Grundsätzlich gilt: Wann immer die PV-Anlage nicht nach Süden ausgerichtet ist, sollte sie möglichst flach montiert werden. Dadurch fangen die Solarmodule möglichst viele Sonnenstrahlen ein.</p>
+                <p className="text-xl font-bold mt-2">Wie lange dauert die Montage einer Photovoltaik Anlage?</p>
+                <p className="text-lg mt-2">Der gesamte Prozess von Planung bis Inbetriebnahme einer Solaranlage dauert in der Regel zwischen drei und sechs Monaten. Die Montage der Anlage selbst nimmt hingegen nur einen Bruchteil der Zeit ein. Bei der Installation durch einen Fachbetrieb dauert die Montage des Untergestells und der Module oft nur wenige Tage.</p>
+                <p className="text-xl font-bold mt-2">Wer darf Photovoltaik installieren?</p>
+                <p className="text-lg mt-2">Es gibt immer wieder Eigenheimbesitzer, die Ihre PV-Anlage gerne selbst installieren würden. Grundsätzlich ist das auch erlaubt: Es gibt keine Regeln, die die Montage durch einen Fachbetrieb vorschreiben. Die PV-Anlage muss jedoch von einem Elektroinstallateur angeschlossen werden.</p>
+                <p className="text-lg mt-2">Tipp: Wir empfehlen immer die professionelle Installation einer PV-Anlage durch Fachkräfte. Denn schon kleine Fehler bei der recht aufwändigen Installation können Sicherheitsrisiken hervorrufen, Ihre Garantie erlöschen lassen und den Versicherungsschutz aufheben.</p>
+                <p className="text-xl font-bold mt-2">Welche Dacheindeckung für Photovoltaik?</p>
+                <p className="text-lg mt-2">Grundsätzlich ist die Installation einer PV-Anlage auf fast jeder Art von Dacheindeckung möglich, solange das Dach tragfähig genug ist.</p>
+                <p className="text-lg mt-2">Dennoch gibt es bei der Art der Dachziegel ein paar Punkte zu beachten. Bei der Installation einer PV-Anlage müssen die Dachziegel nämlich angeschnitten werden, damit die Dachhaken in die Dachsparren geschraubt werden können. Die Löcher müssen dabei sehr klein sein, damit das Dach dicht bleibt. Da einige Ziegel-Arten nicht gut angeschnitten werden können, ist es hier sehr schwierig oder unmöglich, eine Solaranlage zu errichten. Oftmals wird dieser Aspekt unterschätzt, aber um z. B. einen schadenfreien Abbau gewährleisten zu können, müssen Schäden jeglicher Art ausgeschlossen werden können.</p>
+                <p className="text-xl font-bold mt-2">Wie alt darf ein Dach sein für Photovoltaik?</p>
+                <p className="text-lg mt-2">Alle Dächer, die älter sind als 20 Jahre, sollten vor der Installation einer PV-Anlage auf Ihre Tauglichkeit überprüft werden. Das liegt daran, dass PV-Anlagen normalerweise 30 - 40 Jahre auf dem Hausdach bleiben können, während ein Hausdach im Normalfall alle 50 - 60 Jahre erneuert werden sollte. Falls das Hausdach also erneuert werden muss, während die PV-Anlage installiert ist, ergibt sich ein vermeidbarer Extra-Aufwand bei der Dachsanierung, da die PV-Anlage mit ab- und aufgebaut werden muss.</p>
+                <p className="text-xl font-bold mt-2">Wer baut Photovoltaik?</p>
+                <p className="text-lg mt-2">Neben lokalen Fachbetrieben gibt es inzwischen auch zahlreiche digitale, bundesweit aktive Unternehmen, die Photovoltaikanlagen bauen. In den letzten Jahren wurde die Solarbranche in Deutschland von digitalen Solarunternehmen wie Enpal beflügelt, durch die die Suche nach einem Solarexperten kinderleicht wird. Ob Sie sich für einen lokalen oder digitalen PV-Anbieter entscheiden, hängt komplett von Ihren persönlichen Vorlieben ab. Oftmals hilft es, verschiedene Angebote einzuholen und dann anhand von Preis, Aufwand, Service und anderen Faktoren eine fundierte Entscheidung zu treffen.</p>
+                <p className="text-xl font-bold mt-2">Wann Photovoltaik installieren?</p>
+                <p className="text-lg mt-2">Grundsätzlich ist es natürlich einfacher, eine PV-Anlage bei gutem Wetter zu installieren. Unabhängig vom Wetter gilt aber: Je schneller Sie Ihre eigene PV-Anlage auf dem Dach haben, desto eher machen Sie sich von steigenden Strompreisen unabhängig, sparen langfristig Kosten und tun auch noch der Umwelt etwas Gutes. Daher empfehlen wir Ihnen, den Prozess möglichst früh zu starten und sich nicht von Jahreszeiten o.Ä. beeinflussen zu lassen.</p>
+                <p className="text-xl font-bold mt-2">Wie wird eine Photovoltaikanlage montiert?</p>
+                <p className="text-lg mt-2">Wie weiter oben bereits beschrieben, lässt sich die Montage einer Photovoltaikanlage in folgende Schritte einteilen:</p>
+                <ul className='list-decimal list-outside ml-5 font-semibold text-lg *:mt-3'>
+                  <li>Planung und Ertragsberechung</li>
+                  <li>Unterkonstruktion montieren (bestehend aus Dachhaken, Befestigungsschrauben und Montagegestell)</li>
+                  <li>DC-Verkabelung am Montagegestell befestigen</li>
+                  <li>PV-Module montieren und DC-Kabel verbinden</li>
+                  <li>Wechselrichter und Überspannungsschutz installieren</li>
+                  <li>AC-Verkabelung vom Wechselrichter zum Stromzähler anbringen</li>
+                  <li>Solarstromspeicher montieren (optional)</li>
+                  <li>Überprüfung und Probedurchlauf</li>
+                </ul>
+                <p className="text-lg mt-2">Als Hauseigentümer brauchen Sie sich dabei keine Sorgen um Ihr Hausdach zu machen. Die Solarmonteure kümmern sich darum, dass alles einwandfrei verarbeitet wird und Sie am Ende eine perfekt verbaute PV-Anlage auf Ihrem Dach haben, mit der Sie Ihren eigenen Solarstrom erzeugen.</p>
+                <p className="text-xl font-bold mt-2">Wie viele Dachhaken für PV-Anlage?</p>
+                <p className="text-lg mt-2">Bei der Installation einer PV-Anlage werden in der Regel mindestens 3 - 4 Dachhaken pro Solarmodul benötigt. Die genaue Anzahl ist jedoch u.a. abhängig von der Modulgröße, der Dachbelastung, der Dachneigung und dem Sparrenabstand.</p>
+                <p className="text-lg mt-2">Tipp: Wenn Sie mit einem PV-Fachbetrieb zusammenarbeiten, brauchen Sie sich keine Gedanken um die Anzahl der Dachhaken zu machen. Das Expertenteam kümmert sich um alles.</p>
+              </div>
+              <div className="mt-8" id='section7'>
+                <h1 className="text-3xl border-l-4 font-bold border-l-yellow-500 pl-3">Fazit</h1>
+                <p className="text-lg mt-2">Die Montage von Photovoltaikanlagen spielt eine entscheidende Rolle bei der Langlebigkeit der Anlage. Der Prozess, angefangen von der Auswahl des Montagesystems bis zur Installation der Solarmodule, beeinflusst nicht nur die Effizienz, sondern auch ihre Integration in die Umgebung. Die Vielfalt der Montagemethoden erlaubt es, dass fast jeder die Möglichkeit hat, sich eine Photovoltaikanlage anzuschaffen und <Link href="#" className="text-blue-500">Strom zu sparen</Link>. Während Aufdachsyseme eine gute Lösung für Einfamilienhäuser sind, können Anlagen auf Garagen und Schuppen auf Flachdachsystemen installiert werden. </p>
+                <p className="text-lg mt-2">Die exakte Ausrichtung und sichere Installation der Solarmodule ist entscheidend für eine optimale Ausbeute an Solarenergie. Die Zusammenarbeit mit Profis ist daher nicht zu unterschätzen, da sie sonst mögliche Ertragsverluste riskieren.</p>
+                <p className="text-lg mt-2">Enpal bietet Solaranlagen im flexiblen Miet- oder Kaufmodell an. Das Besondere dabei: 0 € Anzahlung, 100% flexibel, kein Risiko. Sie zahlen erst, wenn Ihre PV-Anlage Strom produziert. Ab dann haben Sie drei Monate Zeit, um flexibel zwischen <Link href="#" className="text-blue-500">Solaranlage mieten</Link> und <Link href="#" className="text-blue-500">Solaranlage kaufen</Link> zu entscheiden.</p>
+
+              </div>
             </div>
           </div>
 
