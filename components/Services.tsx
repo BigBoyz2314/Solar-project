@@ -259,7 +259,7 @@ const Services = () => {
                   <li className='list-item font-semibold mb-3'>Der letzte Schritt einer PV-Montage ist die Überprüfung, Messung und ein Probedurchlauf.</li>
                 </ul>
                 <p>Enpal bietet Aufdach-Solaranlagen im flexiblen Miet- oder Kaufmodell an. Das Besondere dabei: 0 € Anzahlung, 100% flexibel, kein Risiko. Sie zahlen erst, wenn Ihre PV-Anlage Strom produziert. Ab dann haben Sie drei Monate Zeit, um flexibel zwischen Solaranlage mieten und Solaranlage kaufen zu entscheiden.</p>
-                <Link className='mt-4 text-blue-600' href="#">{">>"} Mehr erfahren</Link>
+                <Link className='mt-4 text-blue-500' href={"/services/link/mehr-erfahren"}>{">>"} Mehr erfahren</Link>
               </div>
               <div className="mt-8">
                 <Image
@@ -271,21 +271,21 @@ const Services = () => {
                 />
               </div>
               <div className="mt-8">
-                <p className='text-lg'>Wer sich von den steigenden Strompreisen und seinem Stromanbieter unabhängig machen will, macht mit einer <Link href="#" className='text-blue-600'>Photovoltaikanlage</Link> genau den richtigen Schritt in Richtung günstige und nachhaltige Energiegewinnung. Doch bevor man von <Link href="#" className='text-blue-600'>Solarenergie</Link> profitieren kann, muss die Anlage sorgfältig geplant und natürlich installiert werden. In diesem Artikel werfen wir einen detaillierten Blick auf den Montageprozess und die verschiedenen Montagesysteme einer PV-Anlage.</p>
+                <p className='text-lg'>Wer sich von den steigenden Strompreisen und seinem Stromanbieter unabhängig machen will, macht mit einer <Link href={"/services/link/photovoltaikanlage"} className='text-blue-600'>Photovoltaikanlage</Link> genau den richtigen Schritt in Richtung günstige und nachhaltige Energiegewinnung. Doch bevor man von <Link href={"/services/link/solarenergie"} className='text-blue-600'>Solarenergie</Link> profitieren kann, muss die Anlage sorgfältig geplant und natürlich installiert werden. In diesem Artikel werfen wir einen detaillierten Blick auf den Montageprozess und die verschiedenen Montagesysteme einer PV-Anlage.</p>
               </div>
               <div className="mt-8 rounded-xl bg-blue-100 p-4">
                 <h6 className='text-xl font-bold text-blue-900'>INHALTSVERZEICHNIS</h6>
-                <Link className='mt-3 block text-md text-wrap text-gray-700 font-bold underline underline-offset-2' href="#1">Photovoltaik Montage: Das wird benötigt</Link>
-                <Link className='mt-3 block text-md text-wrap text-gray-700 font-bold underline underline-offset-2' href="#2">Photovoltaik Montagearten</Link>
-                <Link className='mt-3 block text-md text-wrap text-gray-700 font-bold underline underline-offset-2' href="#3">Photovoltaik Montagesysteme</Link>
-                <Link className='mt-3 block text-md text-wrap text-gray-700 font-bold underline underline-offset-2' href="#4">In acht Schritten zu Solarenergie</Link>
-                <Link className='mt-3 block text-md text-wrap text-gray-700 font-bold underline underline-offset-2' href="#5">Sicherheit</Link>
-                <Link className='mt-3 block text-md text-wrap text-gray-700 font-bold underline underline-offset-2' href="#6">Häufig gestellte Fragen</Link>
-                <Link className='mt-3 block text-md text-wrap text-gray-700 font-bold underline underline-offset-2' href="#7">Fazit</Link>
+                <Link className='mt-3 block text-md text-wrap text-gray-700 font-bold underline underline-offset-2' href="#section1">Photovoltaik Montage: Das wird benötigt</Link>
+                <Link className='mt-3 block text-md text-wrap text-gray-700 font-bold underline underline-offset-2' href="#section2">Photovoltaik Montagearten</Link>
+                <Link className='mt-3 block text-md text-wrap text-gray-700 font-bold underline underline-offset-2' href="#section3">Photovoltaik Montagesysteme</Link>
+                <Link className='mt-3 block text-md text-wrap text-gray-700 font-bold underline underline-offset-2' href="#section4">In acht Schritten zu Solarenergie</Link>
+                <Link className='mt-3 block text-md text-wrap text-gray-700 font-bold underline underline-offset-2' href="#section5">Sicherheit</Link>
+                <Link className='mt-3 block text-md text-wrap text-gray-700 font-bold underline underline-offset-2' href="#section6">Häufig gestellte Fragen</Link>
+                <Link className='mt-3 block text-md text-wrap text-gray-700 font-bold underline underline-offset-2' href="#section7">Fazit</Link>
               </div>
               <div className="mt-8" id='section1'>
                 <h1 className='text-3xl border-l-4 font-bold border-l-yellow-500 pl-3'>Photovoltaik Montage: Das wird benötigt</h1>
-                <p className='text-lg mt-4'>Für jede Photovoltaik Montage werden bestimmte Materialien benötigt, ohne die eine PV-Anlage nicht montiert werden und keinen <Link href="#" className='text-blue-500'>Solarstrom</Link> produzieren könnte.</p>
+                <p className='text-lg mt-4'>Für jede Photovoltaik Montage werden bestimmte Materialien benötigt, ohne die eine PV-Anlage nicht montiert werden und keinen <Link href={"/services/link/solarstrom"} className='text-blue-500'>Solarstrom</Link> produzieren könnte.</p>
               </div>
               <div className="bg-red-50 mt-8 p-4 rounded-xl">
                 <table className='table'>
@@ -314,14 +314,14 @@ const Services = () => {
                 </table>
               </div>
               <div className="mt-8">
-                <p className='text-lg'>Im Kapitel <Link href="#" className='text-blue-500'>Photovoltaik Montagesysteme</Link> gehen wir noch detaillierter auf die Materialien und ihre Eigenschaften ein. Im Folgenden geht es jedoch erst einmal um die unterschiedlichen Montagearten.</p>
+                <p className='text-lg'>Im Kapitel <Link href={"/services/link/photovoltaik-montagesysteme"} className='text-blue-500'>Photovoltaik Montagesysteme</Link> gehen wir noch detaillierter auf die Materialien und ihre Eigenschaften ein. Im Folgenden geht es jedoch erst einmal um die unterschiedlichen Montagearten.</p>
               </div>
               <div className="mt-8" id='section2'>
                 <h1 className='text-3xl border-l-4 font-bold border-l-yellow-500 pl-3'>Photovoltaik Montagearten</h1>
                 <p className='text-lg mt-4'>Bei der Montage einer Photovoltaikanlage kann zwischen verschiedenen Montagearten gewählt werden. Je nach Dachart und persönlichen Präferenzen stehen folgende Montagearten zur Auswahl:</p>
                 <ul className='list-disc list-inside font-semibold *:mt-3'>
                   <li>Aufdach-PV</li>
-                  <li><Link href="#" className='text-blue-500'>Flachdach Aufständerung</Link></li>
+                  <li><Link href={"/services/link/flachdach-aufständerung"} className='text-blue-500'>Flachdach Aufständerung</Link></li>
                   <li>Photovoltaik auf einem Blechdach</li>
                   <li>Indach Photovoltaik</li>
                   <li>Photovoltaik-Fassaden</li>
@@ -390,7 +390,7 @@ const Services = () => {
                 <ul className='list-disc list-outside ml-5 font-semibold *:mt-3 text-lg'>
                   <li>Jedes Dach, das eine Neigung von maximal 10 Grad har, ist ein Flachdach. Eine Photovoltaikanlage kann aber nur dann auf dem Flachdach montiert werden, wenn die Neigung maximal 3 Grad beträgt. Sonst wäre die Gefahr zu groß, dass die PV-Anlage runterrutscht.</li>
                   <li>Die Module sollten aber bestenfalls aufgestellt werden, da ein flacher Winkel weniger Stromertrag erzielt, als ein steiler Winkel. Dafür gibt es Flachdach-Montagesysteme.</li>
-                  <li>Die optimale Ausrichtung liegt bei 15 bis 35 Grad Neigung bei südlicher <Link href="#">Ausrichtung</Link></li>
+                  <li>Die optimale Ausrichtung liegt bei 15 bis 35 Grad Neigung bei südlicher <Link href={"/services/link/ausrichtung"} className='text-blue-500'>Ausrichtung</Link></li>
                 </ul>
                 <p className="text-lg mt-4">Da angewinkelte Module anfälliger für Windlasten sind, müssen sie gesichert werden. Generell gilt: <span className='font-bold'>Je steiler der Winkel, desto mehr Druck wirkt auf die Module.</span> Sie können entweder mit Gewichten oder Schrauben arbeiten:</p>
                 <ol className='list list-decimal list-outside font-semibold *:mt-3 ml-5 text-lg'>
@@ -495,7 +495,7 @@ const Services = () => {
                 <ol className='list list-decimal list-outside font-semibold *:mt-3 ml-5 text-lg'>
                   <li>Es wird geplant, wie viele Module wo auf dem Dach platziert werden sollen.</li>
                   <li>An den Stellen, an denen später die Module sitzen sollen, werden Schienen in die Dachsparren verschraubt. Es sind keine Dachhaken nötig.</li>
-                  <li>Die <Link href="#">Solarplatten</Link> werden in die Schienen gelegt und rasten dort ein. </li>
+                  <li>Die <Link href={"/services/link/solarplatten"} className='text-blue-500'>Solarplatten</Link> werden in die Schienen gelegt und rasten dort ein. </li>
                   <li>Das restliche Dach wird mit Ziegeln verkleidet.</li>
                 </ol>
                 <p className="text-lg mt-2">Da die Module im Dach liegen und keine Luftzirkulation hinter den Modulen möglich ist, besteht Überhitzungsgefahr. Die Module erwärmen sich schneller und kühlen schlechter ab. Trotz der Dachintegration ist Indach-PV aber genauso wasserundurchlässig wie andere Montagearten. Es sind also keine undichten Stellen am Dach zu befürchten. </p>
@@ -688,11 +688,11 @@ const Services = () => {
                 <p className="text-lg mt-2">Um eine Anlage aufs Dach zu bekommen, braucht es die richtigen Montagesysteme. Die wichtigsten Bestandteile sind die Solarmodule selbst. Die Unterkonstruktion besteht aus Dachhaken, Montageschienen und Modulklemmen. Jedes Bestandteil hat seine feste Aufgabe und Funktion:</p>
                 <h2 className="text-xl font-bold mt-6">Solarmodule</h2>
                 <ul className='list-disc list-inside font-semibold *:mt-3'>
-                  <li><Link href="#" className='text-blue-500'>polykristalline Solarzellen</Link></li>
-                  <li><Link href="#" className='text-blue-500'>monokristalline Solarzellen</Link></li>
-                  <li><Link href="#" className='text-blue-500'>Dünnschichtmodule</Link></li>
+                  <li><Link href={"/services/link/polykristalline-solarzellen"} className='text-blue-500'>polykristalline Solarzellen</Link></li>
+                  <li><Link href={"/services/link/monokristalline-solarzellen"} className='text-blue-500'>monokristalline Solarzellen</Link></li>
+                  <li><Link href={"/services/link/dünnschichtmodule"} className='text-blue-500'>Dünnschichtmodule</Link></li>
                 </ul>
-                <p className="text-lg mt-2">Während monokristalline Module den höchsten Wirkungsgrad aufweisen, sind polykristalline Module günstiger. Dünnschichtmodule sind hingegen vergleichsweise leicht, haben dafür aber den geringsten Wirkungsgrad. Mehr zu den Vor- und Nachteilen finden Sie im folgenden Artikel: <Link href="#" className="text-blue-500">Monokristallin vs. Polykristallin</Link></p>
+                <p className="text-lg mt-2">Während monokristalline Module den höchsten Wirkungsgrad aufweisen, sind polykristalline Module günstiger. Dünnschichtmodule sind hingegen vergleichsweise leicht, haben dafür aber den geringsten Wirkungsgrad. Mehr zu den Vor- und Nachteilen finden Sie im folgenden Artikel: <Link href={"/services/link/monokristallin-vs-polykristallin"} className="text-blue-500">Monokristallin vs. Polykristallin</Link></p>
               </div>
               <div className="mt-8 flex justify-center">
                 <Image
@@ -706,7 +706,7 @@ const Services = () => {
               <div className="mt-8">
                 <p className="text-lg">Ein Modul besteht aus einer Vielzahl von Solarzellen, die durch den photoelektrischen Effekt Licht in elektrische Energie umwandeln. Die Solarzellen sind von einer Kunststoffschicht umhüllt und durch ein Frontglas und einen Rahmen vor Witterungseinflüssen geschützt. </p>
                 <p className="text-lg mt-2">Als Faustregel gilt: 1m2 PV-Module erzeugen ca. 100-200kWh Solarstrom. Wie viele Module insgesamt auf Ihr Dach passen, können Sie sich bei den meisten Photovoltaikanbietern kostenlos berechnen lassen. Mit Ertrags- und Verbrauchsrechner können Sie auch schon vorab überschlägig berechnen, ob sich eine Solaranlage für Sie lohnt.</p>
-                <p className="text-lg mt-2">Hier kommen Sie zum Enpal <Link href="#" className="text-blue-500">Solarcheck</Link> oder zum <Link href="#" className="text-blue-500">Ertragsrechner</Link></p>
+                <p className="text-lg mt-2">Hier kommen Sie zum Enpal <Link href={"/services/link/solarcheck"} className="text-blue-500">Solarcheck</Link> oder zum <Link href={"/services/link/ertragsrechner"} className="text-blue-500">Ertragsrechner</Link></p>
                 <h2 className="text-xl font-bold mt-6">Dachhaken</h2>
                 <p className="text-lg mt-6">Dachhaken sind das Bindeglied zwischen einer Photovoltaikanlage und dem Dach. Sie verbinden die Unterkonstruktion, also die Metallschienen, mit den Dachsparren. Somit sind die Schienen auch bei Sturm sicher befestigt. Die Anzahl der benötigten Dachhaken ist abhängig von mehreren Faktoren: </p>
                 <ul className='list-disc list-inside font-semibold text-lg *:mt-3'>
@@ -777,10 +777,10 @@ const Services = () => {
                 <h1 className="text-3xl border-l-4 font-bold border-l-yellow-500 pl-3">In acht Schritten zu Solarenergie </h1>
                 <p className="text-lg mt-2">Der gesamte Prozess von Planung bis Inbetriebnahme einer Solaranlage dauert in der Regel zwischen drei und sechs Monaten. Die Montage der Anlage selbst nimmt hingegen nur einen Bruchteil der Zeit ein. Bei der Installation durch einen Fachbetrieb dauert die Montage des Untergestells und der Module oft nur wenige Tage. Bevor die Anlage jedoch auf das Dach kommt, muss erst einmal gründlich geplant werden:</p>
                 <p className="text-lg font-semibold mt-2">1. Planung</p>
-                <p className="text-lg mt-2">Der erste Schritt zu einer eigenen Photovoltaik-Anlage auf dem Dach ist die Planung. Hierbei gilt es zu überprüfen, ob sich Ihr <Link href="#" className='text-blue-500'>Dach für eine PV-Anlage eignet</Link> und wie viel Strom Sie erzeugen könnten. Dies können Sie selbst prüfen oder sich einen Fachbetrieb hinzuziehen. Oftmals wird diese Leistung kostenlos angeboten. Bei der Planung wird entschieden, ob gegebenenfalls Abschattungen wie z.B.  Bäume entfernt werden müssten.  </p>
+                <p className="text-lg mt-2">Der erste Schritt zu einer eigenen Photovoltaik-Anlage auf dem Dach ist die Planung. Hierbei gilt es zu überprüfen, ob sich Ihr <Link href={"/services/link/dach-für-eine-pv-anlage-eignet"} className='text-blue-500'>Dach für eine PV-Anlage eignet</Link> und wie viel Strom Sie erzeugen könnten. Dies können Sie selbst prüfen oder sich einen Fachbetrieb hinzuziehen. Oftmals wird diese Leistung kostenlos angeboten. Bei der Planung wird entschieden, ob gegebenenfalls Abschattungen wie z.B.  Bäume entfernt werden müssten.  </p>
                 <div className="p-4 mt-3 bg-green-100 rounded-xl">
                   <p className="text-md">Sie möchten herausfinden, ob sich eine PV-Anlage auch für Ihr Haus lohnt und hätten geren eine konkrete Kosteneinschätzung?</p>
-                  <Link href="#" className="mt-2 text-blue-500">&gt;&gt; Hier können Sie ein unverbindliches Expertengespräch vereinbaren</Link>
+                  <Link href={"/services/link/hier-können-sie-ein-unverbindliches-expertengespräch-vereinbaren"} className="mt-2 text-blue-500">&gt;&gt; Hier können Sie ein unverbindliches Expertengespräch vereinbaren</Link>
                 </div>
                 <p className="text-lg mt-2">Im gleichen Zug können Sie sich entscheiden, ob Sie Ihre Solaranlage mieten oder kaufen möchten. Bei der Miete ist die Montage automatisch Teil des Pakets, während im Kaufmodell die Installation der Anlage nicht zwingend vom Anbieter übernommen wird. In diesem Fall muss die Montage als Zusatzleistung bei einem Fachbetrieb angefragt werden. Photovoltaik selbst zu installieren ist möglich, doch selten empfohlen.</p>
                 <p className="text-lg font-semibold mt-2">2. Unterkonstruktion</p>
@@ -790,7 +790,7 @@ const Services = () => {
                 <p className="text-lg font-semibold mt-2">4. Montage der Module und Verkabelung</p>
                 <p className="text-lg mt-2">Im nächsten Schritt werden die Solarmodule angebracht und miteinander verkabelt.</p>
                 <p className="text-lg mt-2">An einer Stelle wird die DC-Verkabelung durch das Dach geführt. In der Regel wird hier eine Dachpfanne ausgetauscht gegen eine Dachpfanne mit Aussparung für das Kabel. Oftmals reicht jedoch auch eine ähnliche Aussparung am Ziegel wie sie bei Dachhaken gemacht wird. </p>
-                <p className="text-lg mt-2">In der Folgen Grafík ist zu erkennen, dass Module entweder in Reihe oder parallel geschaltet werden können. Die Mehrheit von Photovoltaikanlagen werden als <Link href="#" className='text-blue-500'>Modulstring</Link> installiert, also in Reihe geschaltet.</p>
+                <p className="text-lg mt-2">In der Folgen Grafík ist zu erkennen, dass Module entweder in Reihe oder parallel geschaltet werden können. Die Mehrheit von Photovoltaikanlagen werden als <Link href={"/services/link/modulstring"} className='text-blue-500'>Modulstring</Link> installiert, also in Reihe geschaltet.</p>
 
               </div>
               <div className="mt-8 flex justify-center">
@@ -804,19 +804,19 @@ const Services = () => {
               </div>
               <div className="mt-8">
                 <p className="text-lg font-semibold mt-2">5. Installation Wechselrichter und Überspannungsschutz</p>
-                <p className="text-lg mt-2">Nachdem die Module montiert und verkabelt wurden, folgt der <Link href="#" className='text-blue-500'>Wechselrichter</Link> und Überspannungsschutz. Der Wechselrichter wandelt den Gleichstrom in nutzbaren Wechselstrom um. Daher muss er einerseits mit der PV-Anlage und dem Hausstromnetz verbunden sein.</p>
+                <p className="text-lg mt-2">Nachdem die Module montiert und verkabelt wurden, folgt der <Link href={"/services/link/wechselrichter"} className='text-blue-500'>Wechselrichter</Link> und Überspannungsschutz. Der Wechselrichter wandelt den Gleichstrom in nutzbaren Wechselstrom um. Daher muss er einerseits mit der PV-Anlage und dem Hausstromnetz verbunden sein.</p>
                 <p className="text-lg font-semibold mt-2">6. AC-Verkabelung vom Wechselrichter zum Stromzähler</p>
-                <p className="text-lg mt-2">Sobald der Wechselrichter installiert ist und auch die AC-Verkabelung zum <Link href="#" className='text-blue-500'>Stromzähler</Link> steht, ist die Solaranlage bereit für den Betrieb und erzeugt Strom. Bei der Wahl des Stromzählers ist es wichtig, dass der Stromzähler die Menge des Stroms messen kann, die eingespeist wird. Häufig wird daher ein Zweirichtungszähler verbaut, der Bezug und Einspeisung zählt. Ein Alleskönner unter den Stromzählern sind die modernen Smart Meter. Sie lassen sich individuell programmieren und können Verbrauchsdaten in Echtzeit ausspielen.</p>
+                <p className="text-lg mt-2">Sobald der Wechselrichter installiert ist und auch die AC-Verkabelung zum <Link href={"/services/link/stromzähler"} className='text-blue-500'>Stromzähler</Link> steht, ist die Solaranlage bereit für den Betrieb und erzeugt Strom. Bei der Wahl des Stromzählers ist es wichtig, dass der Stromzähler die Menge des Stroms messen kann, die eingespeist wird. Häufig wird daher ein Zweirichtungszähler verbaut, der Bezug und Einspeisung zählt. Ein Alleskönner unter den Stromzählern sind die modernen Smart Meter. Sie lassen sich individuell programmieren und können Verbrauchsdaten in Echtzeit ausspielen.</p>
                 <p className="text-lg font-semibold mt-2">7. Stromspeicher und Wallbox (optional)</p>
                 <p className="text-lg mt-2">Nachdem die Anlage vollständig verkabelt wurde und Strom erzeugt, kann ein Stromspeichers installiert und mit dem Stromnetz verbunden werden. Auch diesen Schritt können Sie selbst übernehmen oder vom Fachbetrieb Ihrer Wahl ausführen lassen. Bei der Montage des Stromspeichers ist jedoch, wie auch bei der Montage des Wechselrichters, auf eine sichere Vorgehensweise zu achten. Hier besteht Stromschlaggefahr!</p>
-                <p className="text-lg mt-2">Auch um die <Link href="#" className='text-blue-500'>Wallbox</Link> können Sie sich nun kümmern. Die Installation der Wallbox kann allerdings auch vorgezogen werden - sogar noch vor der Montage der Module. </p>
+                <p className="text-lg mt-2">Auch um die <Link href={"/services/link/wallbox"} className='text-blue-500'>Wallbox</Link> können Sie sich nun kümmern. Die Installation der Wallbox kann allerdings auch vorgezogen werden - sogar noch vor der Montage der Module. </p>
                 <p className="text-lg font-semibold mt-2">8. Überprüfung, Probedurchlauf & Messung</p>
                 <p className="text-lg mt-2">Der letzte Schritt ist die Überprüfung der ordnungsgemäßen Funktion der Anlage. Dazu gehört ein erster Probedurchlauf, um zu messen, ob die Anlage Strom erzeugt, wie vorgesehen. Außerdem muss geprüft werden, ob das passende Betriebssystem, wie beispielsweise eine App, korrekt funktioniert. Werden Fehler gefunden, können diese direkt beglichen werden. </p>
               </div>
               <div className="mt-8" id='section5'>
                 <h1 className="text-3xl border-l-4 font-bold border-l-yellow-500 pl-3">Sicherheit</h1>
                 <p className="text-lg mt-2">Die fachgerechte Installation der Photovoltaikanlage ist aus mehreren Gründen besonders wichtig. Auch wenn Termine bei Fachbetrieben weiterhin sehr gefragt und daher schwer zu ergattern sind, sind Risiken damit verbunden, diese Arbeit selbst zu übernehmen. Es besteht erhöhte Unfallgefahr, da eine Installation in großer Höhe ohne die richtige Ausrüstung und das nötige Fachwissen sehr gefährlich ist. Außerdem wird viel mit Strom und Kabeln gearbeitet, was die Gefahr eines Stromschlags birgt. Deshalb dürfen bestimmte Arbeiten, wie z.B. die Endverdrahtung, nur von einem Elektriker durchgeführt werden.</p>
-                <p className="text-lg mt-2">Neben dem persönlichen Unfallrisiko können Sie auch Ihr Montagesystem selbst beschädigen und müssen die PV-Komponenten teuer nachkaufen. Auslöser kann eine unsichere Befestigung sein, die dazu führt, dass sich die Solarmodule bei hoher <Link href="#" className="text-blue-500">Flächenlast</Link> oder <Link href="#" className="text-blue-500">Schneelast</Link> leichter aus dem Gestell lösen.</p>
+                <p className="text-lg mt-2">Neben dem persönlichen Unfallrisiko können Sie auch Ihr Montagesystem selbst beschädigen und müssen die PV-Komponenten teuer nachkaufen. Auslöser kann eine unsichere Befestigung sein, die dazu führt, dass sich die Solarmodule bei hoher <Link href={"/services/link/flächenlast"} className="text-blue-500">Flächenlast</Link> oder <Link href={"/services/link/schneelast"} className="text-blue-500">Schneelast</Link> leichter aus dem Gestell lösen.</p>
               </div>
               <div className="mt-8" id='section6'>
                 <h1 className="text-3xl border-l-4 font-bold border-l-yellow-500 pl-3">Häufig gestellte Fragen</h1>
@@ -856,9 +856,9 @@ const Services = () => {
               </div>
               <div className="mt-8" id='section7'>
                 <h1 className="text-3xl border-l-4 font-bold border-l-yellow-500 pl-3">Fazit</h1>
-                <p className="text-lg mt-2">Die Montage von Photovoltaikanlagen spielt eine entscheidende Rolle bei der Langlebigkeit der Anlage. Der Prozess, angefangen von der Auswahl des Montagesystems bis zur Installation der Solarmodule, beeinflusst nicht nur die Effizienz, sondern auch ihre Integration in die Umgebung. Die Vielfalt der Montagemethoden erlaubt es, dass fast jeder die Möglichkeit hat, sich eine Photovoltaikanlage anzuschaffen und <Link href="#" className="text-blue-500">Strom zu sparen</Link>. Während Aufdachsyseme eine gute Lösung für Einfamilienhäuser sind, können Anlagen auf Garagen und Schuppen auf Flachdachsystemen installiert werden. </p>
+                <p className="text-lg mt-2">Die Montage von Photovoltaikanlagen spielt eine entscheidende Rolle bei der Langlebigkeit der Anlage. Der Prozess, angefangen von der Auswahl des Montagesystems bis zur Installation der Solarmodule, beeinflusst nicht nur die Effizienz, sondern auch ihre Integration in die Umgebung. Die Vielfalt der Montagemethoden erlaubt es, dass fast jeder die Möglichkeit hat, sich eine Photovoltaikanlage anzuschaffen und <Link href={"/services/link/strom-zu-sparen"} className="text-blue-500">Strom zu sparen</Link>. Während Aufdachsyseme eine gute Lösung für Einfamilienhäuser sind, können Anlagen auf Garagen und Schuppen auf Flachdachsystemen installiert werden. </p>
                 <p className="text-lg mt-2">Die exakte Ausrichtung und sichere Installation der Solarmodule ist entscheidend für eine optimale Ausbeute an Solarenergie. Die Zusammenarbeit mit Profis ist daher nicht zu unterschätzen, da sie sonst mögliche Ertragsverluste riskieren.</p>
-                <p className="text-lg mt-2">Enpal bietet Solaranlagen im flexiblen Miet- oder Kaufmodell an. Das Besondere dabei: 0 € Anzahlung, 100% flexibel, kein Risiko. Sie zahlen erst, wenn Ihre PV-Anlage Strom produziert. Ab dann haben Sie drei Monate Zeit, um flexibel zwischen <Link href="#" className="text-blue-500">Solaranlage mieten</Link> und <Link href="#" className="text-blue-500">Solaranlage kaufen</Link> zu entscheiden.</p>
+                <p className="text-lg mt-2">Enpal bietet Solaranlagen im flexiblen Miet- oder Kaufmodell an. Das Besondere dabei: 0 € Anzahlung, 100% flexibel, kein Risiko. Sie zahlen erst, wenn Ihre PV-Anlage Strom produziert. Ab dann haben Sie drei Monate Zeit, um flexibel zwischen <Link href={"/services/link/solaranlage-mieten"} className="text-blue-500">Solaranlage mieten</Link> und <Link href={"/services/link/solaranlage-kaufen"} className="text-blue-500">Solaranlage kaufen</Link> zu entscheiden.</p>
 
               </div>
             </div>
