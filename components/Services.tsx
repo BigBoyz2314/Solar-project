@@ -8,8 +8,17 @@ import { Button } from './ui/button'
 import Plus from './ui/plusicon'
 import Minus from './ui/minusicon'
 import ScrollHandler from './ScrollHandler';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+
 
 const Services = () => {
+
+  const [isHide, setIsHide] = useState(true);
+  setTimeout(() => setIsHide(false), 5000);
 
   const [activeLinkId, setActiveLinkId] = useState<number | null>(null);
 
@@ -44,9 +53,61 @@ const Services = () => {
         <div
           className="flex-col overflow-hidden relative flex min-h-[603px] w-full justify-center items-start max-md:max-w-full max-md:px-5"
         >
-          <video id="product-video" autoPlay={true} className='w-full h-full'>
+          <video id="product-video" autoPlay muted className='w-full h-full'>
             <source src="https://enpaldynamicsliderstrg.blob.core.windows.net/slider-images/Marketing-Materials/Enpal-Product-Page-6s-v13.mp4" type="video/mp4" data-wf-ignore="true"/>
           </video>
+          {!isHide ? 
+            <>
+              <div className="pop1">
+              <Popover>
+                <PopoverTrigger><button className="bg-white bg-opacity-35 text-opacity-100 rounded-full w-10 h-10  text-black text-2xl flex place-content-center">+</button></PopoverTrigger>
+                <PopoverContent className='pop-content border-none'><div className="">Place content for the popover here.</div></PopoverContent>
+              </Popover>
+              </div>
+              <div className="pop2">
+                <Popover>
+                  <PopoverTrigger><button className="bg-white bg-opacity-35 text-opacity-100 rounded-full w-10 h-10  text-black text-2xl flex place-content-center">+</button></PopoverTrigger>
+                  <PopoverContent className='pop-content border-none'>Place content for the popover here.</PopoverContent>
+                </Popover>
+              </div>
+              <div className="pop3">
+                <Popover>
+                  <PopoverTrigger><button className="bg-white bg-opacity-35 text-opacity-100 rounded-full w-10 h-10  text-black text-2xl flex place-content-center">+</button></PopoverTrigger>
+                  <PopoverContent className='pop-content border-none'>Place content for the popover here.</PopoverContent>
+                </Popover>
+              </div>
+              <div className="pop4">
+                <Popover>
+                  <PopoverTrigger><button className="bg-white bg-opacity-35 text-opacity-100 rounded-full w-10 h-10  text-black text-2xl flex place-content-center">+</button></PopoverTrigger>
+                  <PopoverContent className='pop-content border-none'>Place content for the popover here.</PopoverContent>
+                </Popover>
+              </div>
+            </>
+          : null}
+          {/* <div className="pop1">
+            <Popover>
+              <PopoverTrigger><button className="bg-white bg-opacity-35 text-opacity-100 rounded-full w-10 h-10  text-black text-2xl flex place-content-center">+</button></PopoverTrigger>
+              <PopoverContent className='pop1-content border-none'><div className="">Place content for the popover here.</div></PopoverContent>
+            </Popover>
+          </div>
+          <div className="pop2">
+            <Popover>
+              <PopoverTrigger><button className="bg-white bg-opacity-35 text-opacity-100 rounded-full w-10 h-10  text-black text-2xl flex place-content-center">+</button></PopoverTrigger>
+              <PopoverContent>Place content for the popover here.</PopoverContent>
+            </Popover>
+          </div>
+          <div className="pop3">
+            <Popover>
+              <PopoverTrigger><button className="bg-white bg-opacity-35 text-opacity-100 rounded-full w-10 h-10  text-black text-2xl flex place-content-center">+</button></PopoverTrigger>
+              <PopoverContent>Place content for the popover here.</PopoverContent>
+            </Popover>
+          </div>
+          <div className="pop4">
+            <Popover>
+              <PopoverTrigger><button className="bg-white bg-opacity-35 text-opacity-100 rounded-full w-10 h-10  text-black text-2xl flex place-content-center">+</button></PopoverTrigger>
+              <PopoverContent>Place content for the popover here.</PopoverContent>
+            </Popover>
+          </div> */}
           
         </div>
         <div

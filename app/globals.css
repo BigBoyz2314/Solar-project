@@ -86,3 +86,32 @@
 .overflow-unset {
   overflow: unset;
 }
+
+.pop1 {
+  position: absolute;
+  bottom: 26.1%;
+  left: 11.7%;
+}
+
+.pop2 {
+  position: absolute;
+  top: 30.7%;
+  left: 33.6%;
+}
+
+.pop3 {
+  position: absolute;
+  bottom: 21%;
+  left: 37.7%;
+}
+
+.pop4 {
+  position: absolute;
+  bottom: 21%;
+  right: 20%;
+}
+
+.pop-content {
+  backdrop-filter: blur(20px);
+  background-color: rgba(0,0,0,.5);
+}
