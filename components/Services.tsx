@@ -58,25 +58,25 @@ const Services = () => {
           </video>
           {!isHide ? 
             <>
-              <div className="pop1">
+              <div className="pop1 max-md:hidden">
               <Popover>
                 <PopoverTrigger><button className="bg-white bg-opacity-35 text-opacity-100 rounded-full w-10 h-10  text-black text-2xl flex place-content-center">+</button></PopoverTrigger>
                 <PopoverContent className='pop-content border-none'><div className="">Place content for the popover here.</div></PopoverContent>
               </Popover>
               </div>
-              <div className="pop2">
+              <div className="pop2 max-md:hidden">
                 <Popover>
                   <PopoverTrigger><button className="bg-white bg-opacity-35 text-opacity-100 rounded-full w-10 h-10  text-black text-2xl flex place-content-center">+</button></PopoverTrigger>
                   <PopoverContent className='pop-content border-none'>Place content for the popover here.</PopoverContent>
                 </Popover>
               </div>
-              <div className="pop3">
+              <div className="pop3 max-md:hidden">
                 <Popover>
                   <PopoverTrigger><button className="bg-white bg-opacity-35 text-opacity-100 rounded-full w-10 h-10  text-black text-2xl flex place-content-center">+</button></PopoverTrigger>
                   <PopoverContent className='pop-content border-none'>Place content for the popover here.</PopoverContent>
                 </Popover>
               </div>
-              <div className="pop4">
+              <div className="pop4 max-md:hidden">
                 <Popover>
                   <PopoverTrigger><button className="bg-white bg-opacity-35 text-opacity-100 rounded-full w-10 h-10  text-black text-2xl flex place-content-center">+</button></PopoverTrigger>
                   <PopoverContent className='pop-content border-none'>Place content for the popover here.</PopoverContent>
