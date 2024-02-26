@@ -75,6 +75,10 @@
   }
 }
 
+body {
+  scroll-behavior: smooth;
+}
+
 .scroller {
   background-color: #132447;
 }

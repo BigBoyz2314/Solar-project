@@ -46,7 +46,7 @@ const Navbar = () => {
             >
               Services
             </Link>
-            <Link href="/about" passHref
+            <Link href="/about-us" passHref
               className="text-neutral-700 text-base hover:font-semibold hover:border-b-2 hover:border-yellow-400 hover:border-collapse leading-6 tracking-tight self-center my-auto"
             >
               Über uns
